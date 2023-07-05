@@ -12,6 +12,10 @@ public class Log_In {
         System.out.println("You have successfully registered!");
         System.out.println("Please log in to your new account");
     }
+
+    public Boolean logOutuser(String username, boolean t){
+        
+    }
     public void logIn(String username, String password) {
             if (user_identification.containsKey(username) && user_identification.get(username).equals(password)) {
                 System.out.println("Login successful!");
