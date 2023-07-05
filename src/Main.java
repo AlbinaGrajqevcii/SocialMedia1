@@ -53,23 +53,18 @@ public class Main {
                 default:
                     System.out.println("Invalid choice.Please try again!");
 
-
-
-
-
-            }break;
-
+            }  break;
 
 
         }
-
-
-
-
-
-
-
-
+        Posts post1 = new Posts("albinagrajqevci","");
+        Posts post2 = new Posts("dalinaelshani", "");
+        Posts post3 = new Posts("eronagashi", "");
+        Posts post4 = new Posts("deaosmanaj", "");
+        System.out.println(post1);
+        System.out.println(post2);
+        System.out.println(post3);
+        System.out.println(post4);
 
     }
 

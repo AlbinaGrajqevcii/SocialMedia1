@@ -27,7 +27,7 @@ public class Log_In {
         } else {
             System.out.println("Invalid username or password. Please try again.");
 
-
+        }}
 
             public Boolean logInUser (String username, String password){
                 if (user_identification.containsKey(username) && user_identification.get(username).equals(password)) {
@@ -60,4 +60,3 @@ public class Log_In {
             }
 
         }
-    }
