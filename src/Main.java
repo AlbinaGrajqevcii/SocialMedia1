@@ -6,7 +6,6 @@ public class Main {
         Log_In login = new Log_In();
         Scanner scanner = new Scanner(System.in);
 
-
         while (true){
             System.out.println("1.Register");
             System.out.println("2.Log In");
