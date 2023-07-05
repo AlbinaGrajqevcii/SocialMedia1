@@ -5,9 +5,9 @@ public class Followers {
     private String username;
     private List<String> followers;
 
-    public Followers(String username, List<String> followers) {
+    public Followers(String username) {
         this.username = username;
-        this.followers = followers;
+        this.followers = new ArrayList<>();
     }
 
     public void addFollower(String followerUsername) {
