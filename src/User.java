@@ -5,10 +5,10 @@ public class User {
     private String userName;
 
 
-    private List<User> followers;
+    private List<User> followers1;
     private List<Posts> posts;
 
-    public User(int userID, String userName, String followers, List<User> followers1, List<Posts> posts) {
+    public User(int userID, String userName, List<User> followers1, List<Posts> posts) {
         this.userID = userID;
         this.userName = userName;
     }
@@ -36,8 +36,8 @@ public class User {
 
 
 
-        public void setFollowers (List < User > followers) {
-            this.followers = followers;
+        public void setFollowers (List < User > followers1) {
+            this.followers1 = followers1;
         }
 
         public void setPosts (List < Posts > posts) {
