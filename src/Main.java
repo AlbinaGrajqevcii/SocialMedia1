@@ -1,14 +1,13 @@
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Log_In login = new Log_In();
+        LogIn login = new LogIn();
         Scanner scanner = new Scanner(System.in);
 
-        while (true){
+        while (true) {
             System.out.println("1.Register");
             System.out.println("2.Log In");
             System.out.println("3.Log Out");
@@ -18,7 +17,7 @@ public class Main {
             scanner.nextLine();
 
 
-            switch (choice){
+            switch (choice) {
                 case 1:
                     System.out.println("Registration");
                     System.out.print("Enter username: ");
@@ -29,9 +28,9 @@ public class Main {
 
                     System.out.println("\nLog In");
                     System.out.print("Enter username: ");
-             username = scanner.nextLine();
+                    username = scanner.nextLine();
                     System.out.print("Enter password: ");
-                  password = scanner.nextLine();
+                    password = scanner.nextLine();
                     login.logInUser(username, password);
 
                     break;
@@ -41,48 +40,49 @@ public class Main {
                     username = scanner.nextLine();
                     System.out.print("Enter password: ");
                     password = scanner.nextLine();
-                    login.logInUser(username,password);
+                    login.logInUser(username, password);
                     break;
-                    case 3:
-                        System.out.println("Log Out");
-                        System.out.println("Enter username: ");
-                        String logoutUsername = scanner.nextLine();
-                        login.LogOut(logoutUsername);
-                        break;
+                case 3:
+                    System.out.println("Log Out");
+                    System.out.println("Enter username: ");
+                    String logoutUsername = scanner.nextLine();
+                    login.LogOut(logoutUsername);
+                    break;
                 case 4:
                     System.exit(0);
                 default:
                     System.out.println("Invalid choice.Please try again!");
 
-            }  break;
+            }
+            break;
 
 
         }
+
+        User user1 = new User(1, "albinagrajqevci", new ArrayList<>(), new ArrayList<>());
+        User user2 = new User(2, "dalinaelshani", new ArrayList<>(), new ArrayList<>());
         List<Posts> postsList = new ArrayList<>();
 
-        // Create a post with some content
+
         List<String> content1 = new ArrayList<>();
         content1.add("This is the first post.");
         content1.add("It contains some text content.");
-        Posts post1 = new Posts("user1", content1, PostType.TEXT);
+        Posts post1 = new Posts("albinagrajqevci", content1, PostType.TEXT);
 
-        // Create another post with different content
+
         List<String> content2 = new ArrayList<>();
         content2.add("This is the second post.");
         content2.add("It contains an image.");
         content2.add("image.jpg");
-        Posts post2 = new Posts("user2", content2, PostType.IMAGE);
+        Posts post2 = new Posts("dalinaelshani", content2, PostType.IMAGE);
 
-        // Add the posts to the list
         postsList.add(post1);
         postsList.add(post2);
 
-        // Print the details of each post
+
         for (Posts post : postsList) {
             System.out.println(post);
         }
-
-
 
 
         Comments postComments = new Comments();
@@ -98,11 +98,30 @@ public class Main {
             System.out.println(comment);
         }
 
+        Followers followers = new Followers(user1,user1.getFollowers());
+
+        followers.addFollower(user1);
+        followers.addFollower(user2);
+
+
+
+        followers.removeFollower("follower2");
+
+        List<User> followerList = followers.getFollowers();
+
+        System.out.println("Followers:");
+        for (User follower : followerList) {
+            System.out.println(follower);
+        }
+
+
+        System.out.println("User ID: " + user1.getUserID());
+        System.out.println("Username: " + user1.getUserName());
+        System.out.println("Followers: " + user1.getFollowers());
+        System.out.println("Posts: " + user1.getPosts());
+        user1.getPosts().add(post1);
+        user1.getPosts().add(post2);
+        user1.getFollowers().add(user2);
 
     }
-
-
-
-
-
 }

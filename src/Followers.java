@@ -2,15 +2,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Followers {
-    private String username;
-    private List<String> followers;
+    private User username;
+    private List<User> followers;
 
-    public Followers(String username) {
+    public Followers(User username, List<User> followers) {
         this.username = username;
-        this.followers = new ArrayList<>();
+        this.followers = followers;
     }
 
-    public void addFollower(String followerUsername) {
+    public void addFollower(User followerUsername) {
         if (!followers.contains(followerUsername)) {
             followers.add(followerUsername);
             System.out.println(followerUsername + " is now following " + username);
@@ -28,6 +28,20 @@ public class Followers {
         }
     }
 
-    public List<String> getFollowers() {
+    public User getUsername() {
+        return username;
+    }
+
+    public void setUsername(User username) {
+        this.username = username;
+    }
+
+    public List<User> getFollowers() {
         return followers;
-    }}
+    }
+
+    public void setFollowers(List<User> followers) {
+        this.followers = followers;
+    }
+
+}

@@ -3,11 +3,11 @@ import java.util.List;
 
 public class Likes {
     private User username;
-    private List<String> users;
+    private List<User> users;
     private LocalDateTime timestamp;
     private int count;
 
-    public Likes(User username, List<String> users, LocalDateTime timestamp, int count) {
+    public Likes(User username, List<User> users, LocalDateTime timestamp, int count) {
         this.username = username;
         this.users = users;
         this.timestamp = timestamp;
@@ -22,11 +22,11 @@ public class Likes {
         this.username = username;
     }
 
-    public List<String> getUsers() {
+    public List<User> getUsers() {
         return users;
     }
 
-    public void setUsers(List<String> users) {
+    public void setUsers(List<User> users) {
         this.users = users;
     }
 
@@ -45,13 +45,14 @@ public class Likes {
     public void setCount(int count) {
         this.count = count;
     }
-    public void addUser(String userId) {
-        users.add(userId);
+
+    public void addUser(User username) {
+        users.add(username);
         count++;
     }
 
-    public void removeUser(String userId) {
-        users.remove(userId);
+    public void removeUser(User username) {
+        users.remove(username);
         count--;
     }
 }

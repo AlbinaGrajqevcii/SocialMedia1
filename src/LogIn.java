@@ -1,13 +1,8 @@
 import java.util.HashMap;
 
-public class Log_In {
+public class LogIn {
     private HashMap<String,String> user_identification = new HashMap<>();
     private HashMap<String, Boolean> loggedInUsers = new HashMap<>();
-
-//    public Log_In() {
-//        user_identification = new HashMap<>();
-//    }
-
 
 
     public void registration(String username, String password){
@@ -59,4 +54,4 @@ public class Log_In {
                 }
             }
 
-        }
+}
