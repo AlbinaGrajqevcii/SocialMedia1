@@ -1,12 +1,13 @@
 import java.time.LocalDateTime;
+import java.util.List;
 
 public class Posts {
     private String username;
-    private String content;
+    private List<String> content;
     private LocalDateTime dateTime;
     private PostType type;
 
-    public Posts(String username, String content,PostType type) {
+    public Posts(String username, List<String> content,PostType type) {
         this.username = username;
         this.content = content;
         this.dateTime = LocalDateTime.now();
@@ -22,11 +23,11 @@ public class Posts {
         this.username = username;
     }
 
-    public String getContent() {
+    public List<String> getContent() {
         return content;
     }
 
-    public void setContent(String content) {
+    public void setContent(List<String> content) {
         this.content = content;
     }
 

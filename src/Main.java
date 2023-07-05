@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 import java.util.Scanner;
@@ -57,14 +58,29 @@ public class Main {
 
 
         }
-        Posts post1 = new Posts("albinagrajqevci","",PostType.TEXT);
-        Posts post2 = new Posts("dalinaelshani", "",PostType.IMAGE);
-        Posts post3 = new Posts("eronagashi", "",PostType.IMAGE);
-        Posts post4 = new Posts("deaosmanaj", "",PostType.IMAGE);
-        System.out.println(post1);
-        System.out.println(post2);
-        System.out.println(post3);
-        System.out.println(post4);
+        List<Posts> postsList = new ArrayList<>();
+
+        // Create a post with some content
+        List<String> content1 = new ArrayList<>();
+        content1.add("This is the first post.");
+        content1.add("It contains some text content.");
+        Posts post1 = new Posts("user1", content1, PostType.TEXT);
+
+        // Create another post with different content
+        List<String> content2 = new ArrayList<>();
+        content2.add("This is the second post.");
+        content2.add("It contains an image.");
+        content2.add("image.jpg");
+        Posts post2 = new Posts("user2", content2, PostType.IMAGE);
+
+        // Add the posts to the list
+        postsList.add(post1);
+        postsList.add(post2);
+
+        // Print the details of each post
+        for (Posts post : postsList) {
+            System.out.println(post);
+        }
 
 
 
