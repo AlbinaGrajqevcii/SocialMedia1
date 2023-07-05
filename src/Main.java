@@ -1,3 +1,4 @@
+import java.util.List;
 import java.util.Locale;
 import java.util.Scanner;
 
@@ -56,14 +57,31 @@ public class Main {
 
 
         }
-        Posts post1 = new Posts("albinagrajqevci","");
-        Posts post2 = new Posts("dalinaelshani", "");
-        Posts post3 = new Posts("eronagashi", "");
-        Posts post4 = new Posts("deaosmanaj", "");
+        Posts post1 = new Posts("albinagrajqevci","",PostType.TEXT);
+        Posts post2 = new Posts("dalinaelshani", "",PostType.IMAGE);
+        Posts post3 = new Posts("eronagashi", "",PostType.IMAGE);
+        Posts post4 = new Posts("deaosmanaj", "",PostType.IMAGE);
         System.out.println(post1);
         System.out.println(post2);
         System.out.println(post3);
         System.out.println(post4);
+
+
+
+
+        Comments postComments = new Comments();
+        // Add comments to the post
+        postComments.addComment("Great post!");
+        postComments.addComment("I totally agree with you.");
+        postComments.addComment("Could you provide more details?");
+
+        // Retrieve and print the comments
+        List<String> comments = postComments.getComments();
+        System.out.println("Comments:");
+        for (String comment : comments) {
+            System.out.println(comment);
+        }
+
 
     }
 

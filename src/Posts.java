@@ -4,11 +4,13 @@ public class Posts {
     private String username;
     private String content;
     private LocalDateTime dateTime;
+    private PostType type;
 
-    public Posts(String username, String content) {
+    public Posts(String username, String content,PostType type) {
         this.username = username;
         this.content = content;
         this.dateTime = LocalDateTime.now();
+        this.type = type;
 
     }
 
